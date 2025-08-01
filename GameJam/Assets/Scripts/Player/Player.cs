@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     #region Declaration
     [SerializeField] private float speed;
@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     {
         inputRef.MoveEvent += Move;
         inputRef.JumpEvent += Jump;
+        inputRef.JumpEvent -= Jump;
+
 
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ; 
@@ -47,32 +49,38 @@ public class PlayerMovement : MonoBehaviour
         Movement();
         GroundCheck();
 
-        if(isGrounded && rb.linearVelocity.y <= 0)
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
         {
-            isJumping = false; 
-            isFalling = false; 
-            animator.SetBool("isJumpingAnim", false);
-        }
-        else if(!isGrounded && rb.linearVelocity.y < 0)
-        {
-            isFalling = true;
+            rb.AddForce(Vector3.up * data.jumpForce, ForceMode.Impulse);
         }
 
-        if(!isGrounded && rb.linearVelocity.y > 0)
-        {
-            animator.SetBool("isJumpingAnim", true);
-        }
+        // if (isGrounded && rb.linearVelocity.y <= 0)
+        // {
+        //     isJumping = false;
+        //     isFalling = false;
+        //     animator.SetBool("isJumpingAnim", false);
+        // }
+        // else if (!isGrounded && rb.linearVelocity.y < 0)
+        // {
+        //     isFalling = true;
+        // }
 
-        if(!isGrounded && rb.linearVelocity.y < 0)
-        {
-            SetGravityScale(data.gravityScale * data.fallGravityMult);
-        }
-        else
-        {
-            SetGravityScale(data.gravityScale);
-        }
+        // if (!isGrounded && rb.linearVelocity.y > 0)
+        // {
+        //     animator.SetBool("isJumpingAnim", true);
+        //     isJumping = true;
+        // }
 
-        LastOnGroundTime -= Time.deltaTime;
+        // if (!isGrounded && rb.linearVelocity.y < 0)
+        // {
+        //     SetGravityScale(data.gravityScale * data.fallGravityMult);
+        // }
+        // else
+        // {
+        //     SetGravityScale(data.gravityScale);
+        // }
+
+        // LastOnGroundTime -= Time.deltaTime;
         // animator.SetFloat("inputY", rb.linearVelocity.y);
     }
 
@@ -101,19 +109,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if ((isGrounded || LastOnGroundTime > 0f) && !isJumping)
-        {
-            float force = data.jumpForce;
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, 0); 
-            rb.AddForce(Vector3.up * force, ForceMode.Impulse);
-            isJumping = true;
-            LastOnGroundTime = 0f;
-            animator.SetBool("isJumpingAnim", isJumping);
-        }
-        else
-        {
-            animator.SetBool("isJumpingAnim", !isJumping);
-        }
+        // if ((isGrounded || LastOnGroundTime > 0f) && !isJumping)
+        // {
+        //     float force = data.jumpForce;
+        //     rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, 0);
+        //     rb.AddForce(Vector3.up * force, ForceMode.Impulse);
+        //     isJumping = true;
+        //     LastOnGroundTime = 0f;
+        //     animator.SetBool("isJumpingAnim", isJumping);
+        // }
+        // else
+        // {
+        //     animator.SetBool("isJumpingAnim", !isJumping);
+        // }
     }
 
     private void GroundCheck()
@@ -135,10 +143,5 @@ public class PlayerMovement : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_groundCheckPoint.position, _groundCheckSize);
-    }
-
-    private void OnDisable()
-    {
-        inputRef.JumpEvent -= Jump;
     }
 }
