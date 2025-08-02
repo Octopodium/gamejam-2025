@@ -16,6 +16,11 @@ public class PauseMenuController : MonoBehaviour
         GameManager.Instance.Despausar();
     }
 
+    public void ResetLevelButton()
+    {
+        GameManager.Instance.ResetarSala(); 
+    }
+
     public void BackToMenuButton()
     {
         SceneManager.LoadScene(sceneName);
