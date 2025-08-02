@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IResetavel
 {
     #region Declaration
     public static Player Instance { get; private set; }
@@ -177,4 +177,10 @@ public class Player : MonoBehaviour
     }
 
     #endregion
+
+    public void Resetar() {
+        foreach (Transform child in itemHolder) {
+            Destroy(child.gameObject);
+        }
+    }
 }

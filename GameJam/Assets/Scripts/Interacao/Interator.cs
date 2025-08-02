@@ -9,7 +9,7 @@ public class Interator : MonoBehaviour {
 
 
     void Start() {
-        collidersInteragiveis = new Collider[10]; // Tamanho do array pode ser ajustado conforme necessário
+        collidersInteragiveis = new Collider[8]; // Tamanho do array pode ser ajustado conforme necessário
         ultimoInteragivel = null;
 
         inputRef = Player.Instance.inputRef;
@@ -17,7 +17,8 @@ public class Interator : MonoBehaviour {
     }
 
     void OnDestroy() {
-        inputRef.InteractEvent -= Interagir;
+        if (inputRef != null)
+            inputRef.InteractEvent -= Interagir;
     }
 
     void FixedUpdate() {
