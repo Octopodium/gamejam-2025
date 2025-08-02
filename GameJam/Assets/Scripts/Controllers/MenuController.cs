@@ -13,7 +13,7 @@ public class MenuController : MonoBehaviour
 
     public void PanelCredits()
     {
-        
+        panelCredits.SetActive(!panelCredits.activeInHierarchy);
     }
 
     public void QuitGameButton()
