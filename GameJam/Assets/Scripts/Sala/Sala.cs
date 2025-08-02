@@ -86,4 +86,16 @@ public class Sala : MonoBehaviour {
         spawnPoint = newSpawnPoint;
     }
 
+    public void SetLightHolder(Transform newLightSpawnPoint) {
+        luzHolderInicio = newLightSpawnPoint;
+    }
+
+    public void SetPlayerStartsWithLight(bool value) {
+        luzNoPlayerNoInicio = value;
+    }
+
+    public void TeleportPlayerTo(Transform transform) {
+        GameManager.Instance.TPPlayerTo(transform);
+    }
+
 }
