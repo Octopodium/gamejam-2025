@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Luz : MonoBehaviour{
-    float raioIluminacao = 4.1f;
+    public float raioIluminacao = 4.1f;
     public LayerMask ilumiavelLayer;
     Collider[] collidersIluminaveis;
     Iluminavel iluminavel;
