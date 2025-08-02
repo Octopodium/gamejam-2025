@@ -32,6 +32,7 @@ public class InputRef : ScriptableObject, InputMap.IPlayerActions //Interfaces d
     public event Action<Vector2> MoveEvent;
     public event Action JumpEvent;
     public event Action PauseEvent;
+    public event Action InteractEvent;
 
     public void OnMove(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
@@ -51,6 +52,14 @@ public class InputRef : ScriptableObject, InputMap.IPlayerActions //Interfaces d
         if(context.performed)
         {
             PauseEvent.Invoke();
+        }
+    }
+
+    public void OnInteract(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            InteractEvent.Invoke();
         }
     }
 

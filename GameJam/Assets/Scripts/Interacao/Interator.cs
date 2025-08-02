@@ -5,14 +5,29 @@ public class Interator : MonoBehaviour {
     public LayerMask layerInteragivel; // Layer dos objetos interagíveis
     Collider[] collidersInteragiveis;
     Interagivel ultimoInteragivel;
+    public InputRef inputRef;
 
-    void Awake() {
+
+    void Start() {
         collidersInteragiveis = new Collider[10]; // Tamanho do array pode ser ajustado conforme necessário
         ultimoInteragivel = null;
+
+        inputRef = Player.Instance.inputRef;
+        inputRef.InteractEvent += Interagir;
+    }
+
+    void OnDestroy() {
+        inputRef.InteractEvent -= Interagir;
     }
 
     void FixedUpdate() {
         ChecarInteragiveis();
+    }
+
+    public void Interagir() {
+        if (ultimoInteragivel != null) {
+            ultimoInteragivel.Interagir();
+        }
     }
 
     public bool ChecarInteragiveis() {

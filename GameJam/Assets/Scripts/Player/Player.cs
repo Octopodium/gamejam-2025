@@ -7,6 +7,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     #region Declaration
+    public static Player Instance { get; private set; }
+
     [SerializeField] private float speed;
     public InputRef inputRef;
     private Vector3 movement;
@@ -26,10 +28,23 @@ public class Player : MonoBehaviour
 
     private float LastOnGroundTime; 
 
+
+    [Header("Segurador")]
+    public Transform itemHolder;
+    public bool estaSegurando => itemHolder.childCount > 0;
+    public Transform itemSegurado => itemHolder.childCount > 0 ? itemHolder.GetChild(0) : null;
+
     #endregion
 
     void Awake()
     {
+        if (Instance == null) Instance = this;
+        else {
+            Destroy(gameObject);
+            return;
+        }
+
+
         inputRef.MoveEvent += Move;
         inputRef.JumpEvent += Jump;
         inputRef.JumpEvent -= Jump;
@@ -109,19 +124,19 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        // if ((isGrounded || LastOnGroundTime > 0f) && !isJumping)
-        // {
-        //     float force = data.jumpForce;
-        //     rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, 0);
-        //     rb.AddForce(Vector3.up * force, ForceMode.Impulse);
-        //     isJumping = true;
-        //     LastOnGroundTime = 0f;
-        //     animator.SetBool("isJumpingAnim", isJumping);
-        // }
-        // else
-        // {
-        //     animator.SetBool("isJumpingAnim", !isJumping);
-        // }
+        if ((isGrounded || LastOnGroundTime > 0f) && !isJumping)
+        {
+            float force = data.jumpForce;
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, 0);
+            rb.AddForce(Vector3.up * force, ForceMode.Impulse);
+            isJumping = true;
+            LastOnGroundTime = 0f;
+            animator.SetBool("isJumpingAnim", isJumping);
+        }
+        else
+        {
+            animator.SetBool("isJumpingAnim", !isJumping);
+        }
     }
 
     private void GroundCheck()
@@ -144,4 +159,17 @@ public class Player : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_groundCheckPoint.position, _groundCheckSize);
     }
+    
+
+    #region Segurando coisas
+
+    public void SegurarItem(Transform item) {
+        if (item == null) return;
+
+        item.SetParent(itemHolder);
+        item.localPosition = Vector3.zero;
+        item.localRotation = Quaternion.identity;
+    }
+
+    #endregion
 }
