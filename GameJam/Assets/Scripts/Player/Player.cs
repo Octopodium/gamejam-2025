@@ -47,7 +47,6 @@ public class Player : MonoBehaviour, IResetavel
 
         inputRef.MoveEvent += Move;
         inputRef.JumpEvent += Jump;
-        inputRef.JumpEvent -= Jump;
 
 
         rb = GetComponent<Rigidbody>();
