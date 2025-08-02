@@ -7519,7 +7519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1758200270
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7962,8 +7962,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Gamplay, Arte Main menu, level design, ilumina\xE7\xE3o\ngameplay, Intera\xE7\xE3o,
     player, salas, level design, iluminacao\nAssets 3D\nArte e anima\xE7\xE3o do
-    player, level design, iluminacao\naudio, movimenta\xE7\xE3o, level design, ui
-    design"
+    player, level design, iluminacao, shader\naudio, movimenta\xE7\xE3o, level design,
+    ui design"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e6dff7cca04fe44dbd4fcb0e5d8e930, type: 2}
   m_sharedMaterial: {fileID: -4811318867596143229, guid: 6e6dff7cca04fe44dbd4fcb0e5d8e930, type: 2}
