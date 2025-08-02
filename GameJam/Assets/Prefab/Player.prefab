@@ -152,7 +152,7 @@ MonoBehaviour:
   _groundCheckSize: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   itemHolder: {fileID: 3890241587391697732}
   arremessoForce: 5
   arremessoAltura: 1

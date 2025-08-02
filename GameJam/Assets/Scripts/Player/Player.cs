@@ -70,6 +70,8 @@ public class Player : MonoBehaviour, IResetavel
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
 
+        choes = new Collider[8];
+
         interator = GetComponent<Interator>();
     }
 
@@ -168,13 +170,31 @@ public class Player : MonoBehaviour, IResetavel
         }
     }
 
+    Collider[] choes;
+    ChaoGrudavel chaoGrudado;
+
     private void GroundCheck()
     {
-        isGrounded = Physics.CheckSphere(_groundCheckPoint.position, _groundCheckSize, groundLayer);
+        int choesCount = Physics.OverlapSphereNonAlloc(_groundCheckPoint.position, _groundCheckSize, choes, groundLayer);
+        isGrounded = choesCount > 0;
 
-        if (isGrounded)
-        {
+        if (isGrounded) {
             LastOnGroundTime = 0.2f; 
+        }
+
+        if (choesCount > 0) {
+            ChaoGrudavel chaoGrudavel = choes[0].GetComponent<ChaoGrudavel>();
+            if (chaoGrudavel != null) {
+                if (chaoGrudado != chaoGrudavel && chaoGrudado != null) {
+                    chaoGrudado.Desgrudar(transform);
+                }
+
+                chaoGrudavel.Grudar(transform);
+                chaoGrudado = chaoGrudavel;
+            } else if (chaoGrudado != null) {
+                chaoGrudado.Desgrudar(transform);
+                chaoGrudado = null;
+            }
         }
     }
 

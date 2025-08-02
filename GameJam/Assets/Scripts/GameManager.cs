@@ -87,6 +87,8 @@ public class GameManager: MonoBehaviour {
     }
 
     public void PassarDeSala() {
+        Player.Instance.transform.SetParent(transform);
+
         Scene cenaAtual = salaAtual.gameObject.scene;
         player.SetActive(false);
 
