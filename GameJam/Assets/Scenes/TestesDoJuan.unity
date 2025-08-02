@@ -675,6 +675,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1581472999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &519024667 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3316392444374669385, guid: 664755bfabc208941bad6b6627992156, type: 3}
+  m_PrefabInstance: {fileID: 2020672090}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &644805378
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7378595806251920963}
   - component: {fileID: 8560121335005412073}
   - component: {fileID: 8737843769578721472}
+  - component: {fileID: 5970555881993200482}
+  - component: {fileID: 8930512097413730424}
   m_Layer: 10
   m_Name: Luz
   m_TagString: LampadaPrincipal
@@ -109,6 +111,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091fd8c15a1897847b1b7200573aca9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5970555881993200482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424645113504157065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a116cba2083e2f24c82f3f67967a9456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ilumiavelLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &8930512097413730424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424645113504157065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c777b2f34fa63249a39f7cad9fec23d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outterLight: {fileID: 8489841676856326676}
+  outterCircle: {fileID: 3946556804934956858}
+  inputRef: {fileID: 11400000, guid: 8d5caf8a8eeb73640a1e53cd20e8bfdd, type: 2}
 --- !u!1 &8619525357909096145
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +430,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 664755bfabc208941bad6b6627992156, type: 3}
+--- !u!23 &3946556804934956858 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3316392444374669385, guid: 664755bfabc208941bad6b6627992156, type: 3}
+  m_PrefabInstance: {fileID: 1784214740502949747}
+  m_PrefabAsset: {fileID: 0}
+--- !u!108 &8489841676856326676 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 7859687194181653863, guid: 664755bfabc208941bad6b6627992156, type: 3}
+  m_PrefabInstance: {fileID: 1784214740502949747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8904200956297017994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7156464232642860537, guid: 664755bfabc208941bad6b6627992156, type: 3}

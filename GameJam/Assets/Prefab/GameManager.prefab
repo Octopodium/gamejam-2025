@@ -321,7 +321,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb35649194145d46a836f2b4a89ea36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputRef: {fileID: 11400000, guid: 8d5caf8a8eeb73640a1e53cd20e8bfdd, type: 2}
   player: {fileID: 24840835868117565}
+  red: {r: 1, g: 0.37254903, b: 0.38431373, a: 1}
+  blue: {r: 0.27450982, g: 0.78431374, b: 0.9843137, a: 1}
+  green: {r: 0, g: 0.83137256, b: 0.11372549, a: 1}
+  cores: 0
 --- !u!1001 &6865074943567044019
 PrefabInstance:
   m_ObjectHideFlags: 0

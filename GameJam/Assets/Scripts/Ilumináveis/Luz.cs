@@ -19,8 +19,7 @@ public class Luz : MonoBehaviour{
 
         for(int i = 0; i < iluminaveisQuant; i++){
             iluminavel = collidersIluminaveis[i].GetComponent<Iluminavel>();
-            iluminavel.Reagir();
-
+            iluminavel.Reagir(GameManager.Instance.GetColor());
         }
     }
 

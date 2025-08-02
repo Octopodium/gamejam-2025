@@ -10,6 +10,9 @@ public class GameManager: MonoBehaviour {
 
     public GameObject player;
 
+    public Color red, blue, green;
+    public Cores cores;
+
     private void Awake() {
         if (Instance == null) {
             Instance = this;
@@ -97,5 +100,18 @@ public class GameManager: MonoBehaviour {
         Debug.Log("Player morreu, reiniciando sala atual");
         ResetarSala();
     }
+
+    #region Color
+
+    public Color GetColor(){
+        if(cores == Cores.RED) return red;
+        if(cores == Cores.BLUE) return blue;
+        if(cores == Cores.GREEN) return green;
+        else{
+            return red;
+        }
+    }
+
+    #endregion
 
 }

@@ -33,6 +33,7 @@ public class InputRef : ScriptableObject, InputMap.IPlayerActions //Interfaces d
     public event Action JumpEvent;
     public event Action PauseEvent;
     public event Action InteractEvent;
+    public event Action SwitchEvent;
 
     public void OnMove(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
@@ -60,6 +61,14 @@ public class InputRef : ScriptableObject, InputMap.IPlayerActions //Interfaces d
         if(context.performed)
         {
             InteractEvent.Invoke();
+        }
+    }
+
+    public void OnSwitchColor(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            SwitchEvent.Invoke();
         }
     }
 
