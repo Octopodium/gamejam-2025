@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2567138212600780631}
   - component: {fileID: 4689478662383411514}
   - component: {fileID: 5248335459083028378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Moth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 5852040816840208797}
   - component: {fileID: 9102827502245359684}
   - component: {fileID: 1022276800093259540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Inner Circulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 5265457436038231402}
   - component: {fileID: 7082220922618641038}
   - component: {fileID: 3856780768330083923}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Inner Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   - component: {fileID: 7117495808141107375}
   - component: {fileID: 4784649671730985755}
   - component: {fileID: 7729570436740757188}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Back Circulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -407,7 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3890241587391697732}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 9077140639906456723}
   - component: {fileID: 7798683400684543916}
   - component: {fileID: 7716166719198061362}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Quad-temp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 3506719505251161822}
   - component: {fileID: 1921506175936878131}
   - component: {fileID: 8807516640932703044}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ MonoBehaviour:
   raioInteracao: 1.5
   layerInteragivel:
     serializedVersion: 2
-    m_Bits: 576
+    m_Bits: 1088
 --- !u!1 &8831995389943748866
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2453627811043412606}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7008739940353258001}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Moth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -720,13 +720,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7008739940353258001}
     m_Modifications:
+    - target: {fileID: 287354106794532909, guid: 664755bfabc208941bad6b6627992156, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 766851219874094924, guid: 664755bfabc208941bad6b6627992156, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4519807670334698305, guid: 664755bfabc208941bad6b6627992156, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5243180874295799142, guid: 664755bfabc208941bad6b6627992156, type: 3}
       propertyPath: m_Name
       value: Iluminacao
       objectReference: {fileID: 0}
     - target: {fileID: 5243180874295799142, guid: 664755bfabc208941bad6b6627992156, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7156464232642860537, guid: 664755bfabc208941bad6b6627992156, type: 3}
       propertyPath: m_LocalPosition.x

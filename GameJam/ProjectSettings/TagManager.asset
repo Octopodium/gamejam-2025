@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - LampadaPrincipal
   layers:
   - Default
   - TransparentFX
@@ -16,9 +17,6 @@ TagManager:
   - Iluminavel
   - Player
   - Lampada
-  - 
-  - 
-  - 
   - 
   - 
   - 
