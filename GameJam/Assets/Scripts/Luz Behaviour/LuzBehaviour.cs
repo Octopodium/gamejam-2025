@@ -13,9 +13,18 @@ public class LuzBehaviour : MonoBehaviour{
     public void Start(){
         inputRef = GameManager.Instance.inputRef;
         inputRef.SwitchEvent += MudaCor;
+        CorInicial();
+    }
+
+    public void OnDestroy(){
+        inputRef.SwitchEvent -= MudaCor;
     }
 
     public void MudaCor(){
+        if(Player.Instance.itemSegurado != transform){
+            return;
+        }
+
         if(GameManager.Instance.cores == Cores.GREEN){
             GameManager.Instance.cores = 0;
         }else{
@@ -27,6 +36,13 @@ public class LuzBehaviour : MonoBehaviour{
 
         //color.a = innerAlpha;
         //innerCircle.material.color = color;
+        color.a = outterAlpha;
+        outterCircle.material.color = color;
+    }
+
+    public void CorInicial(){
+        Color color = GameManager.Instance.GetColor();
+        outterLight.color = color;
         color.a = outterAlpha;
         outterCircle.material.color = color;
     }
