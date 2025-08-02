@@ -175,7 +175,7 @@ public class Player : MonoBehaviour, IResetavel
 
     private void GroundCheck()
     {
-        int choesCount = Physics.OverlapSphereNonAlloc(_groundCheckPoint.position, _groundCheckSize, choes, groundLayer);
+        int choesCount = Physics.OverlapSphereNonAlloc(_groundCheckPoint.position, _groundCheckSize, choes, groundLayer, QueryTriggerInteraction.Collide);
         isGrounded = choesCount > 0;
 
         if (isGrounded) {
