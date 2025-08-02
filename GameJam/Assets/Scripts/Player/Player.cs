@@ -63,10 +63,7 @@ public class Player : MonoBehaviour, IResetavel
         Movement();
         GroundCheck();
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
-        {
-            rb.AddForce(Vector3.up * data.jumpForce, ForceMode.Impulse);
-        }
+        
 
         // if (isGrounded && rb.linearVelocity.y <= 0)
         // {
