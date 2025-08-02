@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class LuzBehaviour : MonoBehaviour{
+    public Color red, blue, green;
     public Light outterLight;
     public MeshRenderer outterCircle, innerCircle;
 

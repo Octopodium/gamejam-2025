@@ -44,8 +44,8 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 100
-  m_Range: 6
+  m_Intensity: 200
+  m_Range: 5.4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -220,6 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c777b2f34fa63249a39f7cad9fec23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  red: {r: 1, g: 0, b: 0, a: 1}
+  blue: {r: 0, g: 0, b: 1, a: 1}
+  green: {r: 0, g: 1, b: 0, a: 1}
   outterLight: {fileID: 7736967914570221378}
   outterCircle: {fileID: 2903200891657128556}
   innerCircle: {fileID: 1022276800093259540}
@@ -240,7 +243,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5852040816840208797
 Transform:
   m_ObjectHideFlags: 0
@@ -533,7 +536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7117495808141107375
 Transform:
   m_ObjectHideFlags: 0
@@ -907,11 +910,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3671018980766027194}
   - {fileID: 7117495808141107375}
   - {fileID: 4954476851969991992}
   - {fileID: 5265457436038231402}
   - {fileID: 5852040816840208797}
   - {fileID: 5695048723263998065}
-  - {fileID: 3671018980766027194}
   m_Father: {fileID: 137539632279928056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
