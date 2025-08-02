@@ -124,6 +124,11 @@ public class GameManager: MonoBehaviour {
         ResetarSala();
     }
 
+    public void DestroyThyself() {
+            Destroy(gameObject);
+            Instance = null; 
+    }
+
     #region Color
 
     public Color GetColor(Cores cores){

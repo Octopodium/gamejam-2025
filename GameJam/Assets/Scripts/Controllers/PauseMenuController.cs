@@ -24,6 +24,7 @@ public class PauseMenuController : MonoBehaviour
     public void BackToMenuButton()
     {
         SceneManager.LoadScene(sceneName);
+        GameManager.Instance.DestroyThyself();
     }
 
     public void SliderControl(float value)
