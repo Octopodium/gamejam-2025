@@ -16,7 +16,7 @@ public class Player : MonoBehaviour, IResetavel
     public Vector2 direction;
     public PlayerData data;
     public Rigidbody rb;
-    private Animator animator;
+    [SerializeField] private Animator animator;
 
     private bool isGrounded;
     private bool isFalling;
@@ -43,6 +43,15 @@ public class Player : MonoBehaviour, IResetavel
     public float arremessoAltura = 2f;
 
     #endregion
+
+    #region Animation Tags:
+
+    private int airbourne = Animator.StringToHash("Airbourne");
+    private int walking = Animator.StringToHash("Walking");
+    private int carrying = Animator.StringToHash("Carrying");
+
+    #endregion
+
 
     void Awake()
     {
@@ -76,51 +85,56 @@ public class Player : MonoBehaviour, IResetavel
 
         
 
-        // if (isGrounded && rb.linearVelocity.y <= 0)
-        // {
-        //     isJumping = false;
-        //     isFalling = false;
-        //     animator.SetBool("isJumpingAnim", false);
-        // }
-        // else if (!isGrounded && rb.linearVelocity.y < 0)
-        // {
-        //     isFalling = true;
-        // }
+        if (isGrounded && rb.linearVelocity.y <= 0)
+        {
+            isJumping = false;
+            isFalling = false;
+            animator.SetBool(airbourne, false);
+        }
+        else if (!isGrounded && rb.linearVelocity.y < 0)
+        {
+            isFalling = true;
+        }
 
-        // if (!isGrounded && rb.linearVelocity.y > 0)
-        // {
-        //     animator.SetBool("isJumpingAnim", true);
-        //     isJumping = true;
-        // }
+        if (!isGrounded && rb.linearVelocity.y > 0)
+        {
+            animator.SetBool(airbourne, true);
+            isJumping = true;
+        }
 
-        // if (!isGrounded && rb.linearVelocity.y < 0)
-        // {
-        //     SetGravityScale(data.gravityScale * data.fallGravityMult);
-        // }
-        // else
-        // {
-        //     SetGravityScale(data.gravityScale);
-        // }
+        if (!isGrounded && rb.linearVelocity.y < 0)
+        {
+            SetGravityScale(data.gravityScale * data.fallGravityMult);
+        }
+        else
+        {
+            SetGravityScale(data.gravityScale);
+        }
 
-        // LastOnGroundTime -= Time.deltaTime;
-        // animator.SetFloat("inputY", rb.linearVelocity.y);
+        LastOnGroundTime -= Time.deltaTime;
+        //animator.SetFloat("inputY", rb.linearVelocity.y);
     }
 
     private void Movement()
     {
-        // if (movementDirection.magnitude > 0.1f)
-        // {
-        //     Vector3 move = new Vector3(movement.x, 0, 0); // Movimento no eixo X
-        //     transform.Translate(move * speed * Time.deltaTime);
-        //     animator.SetFloat("inputX", movement.x);
-        // }
-        // else
-        // {
-        //     animator.SetFloat("inputX", 0);
-        // }
-
+        if (movementDirection.magnitude > 0.1f)
+        {
             Vector3 move = new Vector3(movement.x, 0, 0); // Movimento no eixo X
             transform.Translate(move * speed * Time.deltaTime);
+
+            if(move.x > 0){
+                animator.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else if( move.x < 0){
+                animator.transform.localScale = new Vector3(1, 1, 1);
+            }
+
+            animator.SetBool(walking, true);
+        }
+        else
+        {
+            animator.SetBool(walking, false);
+        }
     }
 
     private void Move(Vector2 dir)
@@ -134,19 +148,19 @@ public class Player : MonoBehaviour, IResetavel
 
     private void Jump()
     {
-        // if ((isGrounded || LastOnGroundTime > 0f) && !isJumping)
-        // {
-        //     float force = data.jumpForce;
-        //     rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, 0);
-        //     rb.AddForce(Vector3.up * force, ForceMode.Impulse);
-        //     isJumping = true;
-        //     LastOnGroundTime = 0f;
-        //     animator.SetBool("isJumpingAnim", isJumping);
-        // }
-        // else
-        // {
-        //     animator.SetBool("isJumpingAnim", !isJumping);
-        // }
+        if ((isGrounded || LastOnGroundTime > 0f) && !isJumping)
+        {
+            float force = data.jumpForce;
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, 0);
+            rb.AddForce(Vector3.up * force, ForceMode.Impulse);
+            isJumping = true;
+            LastOnGroundTime = 0f;
+            animator.SetBool(airbourne, isJumping);
+        }
+        else
+        {
+            animator.SetBool(airbourne, !isJumping);
+        }
 
         if (isGrounded && !isJumping)
         {
