@@ -3511,6 +3511,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6445294444107519519, guid: 972bc7a820b867b409a71511a311b39c, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1324125242}
+    - target: {fileID: 6445294444107519519, guid: 972bc7a820b867b409a71511a311b39c, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SliderControl
+      objectReference: {fileID: 0}
     - target: {fileID: 8460278012457807634, guid: 972bc7a820b867b409a71511a311b39c, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -3525,6 +3533,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6822116538727440715, guid: 972bc7a820b867b409a71511a311b39c, type: 3}
   m_PrefabInstance: {fileID: 1311767675}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1324125242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1265077042886761082, guid: 972bc7a820b867b409a71511a311b39c, type: 3}
+  m_PrefabInstance: {fileID: 1311767675}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2998fbcec7d20a40a38f49ad7fd6c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1346732149
 GameObject:
   m_ObjectHideFlags: 0
