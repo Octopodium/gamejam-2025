@@ -5521,6 +5521,7 @@ GameObject:
   - component: {fileID: 270297684}
   - component: {fileID: 270297686}
   - component: {fileID: 270297685}
+  - component: {fileID: 270297687}
   m_Layer: 5
   m_Name: Folhagem1
   m_TagString: Untagged
@@ -5585,6 +5586,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270297683}
   m_CullTransparentMesh: 1
+--- !u!95 &270297687
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270297683}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c5dd81c6dbfb83748b6747638b447cce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &523496235
 GameObject:
   m_ObjectHideFlags: 0
@@ -5853,6 +5876,7 @@ GameObject:
   - component: {fileID: 930900199}
   - component: {fileID: 930900201}
   - component: {fileID: 930900200}
+  - component: {fileID: 930900202}
   m_Layer: 5
   m_Name: Folhagem2
   m_TagString: Untagged
@@ -5917,6 +5941,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930900198}
   m_CullTransparentMesh: 1
+--- !u!95 &930900202
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930900198}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 93daec33bd976ae4180522603d5824fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &955180578
 GameObject:
   m_ObjectHideFlags: 0
@@ -6436,7 +6482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -802.99994, y: -488.5802}
+  m_AnchoredPosition: {x: -803.00006, y: -488.58023}
   m_SizeDelta: {x: -1740.8, y: -1025.7703}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1317235743
