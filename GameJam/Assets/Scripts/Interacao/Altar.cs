@@ -18,6 +18,11 @@ public class Altar : MonoBehaviour, Interacao {
         item.SetParent(holder);
         item.localPosition = Vector3.zero;
         item.localRotation = Quaternion.identity;
+
+        Rigidbody rb = item.GetComponent<Rigidbody>();
+        if (rb != null) {
+            rb.isKinematic = true;
+        }
     }
 
     public bool PodeInteragir() {

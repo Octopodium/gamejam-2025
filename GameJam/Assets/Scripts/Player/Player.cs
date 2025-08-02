@@ -13,6 +13,7 @@ public class Player : MonoBehaviour, IResetavel
     public InputRef inputRef;
     private Vector3 movement;
     public Vector2 movementDirection;
+    public Vector2 direction;
     public PlayerData data;
     public Rigidbody rb;
     private Animator animator;
@@ -28,11 +29,18 @@ public class Player : MonoBehaviour, IResetavel
 
     private float LastOnGroundTime; 
 
+    // Interator
+    Interator interator;
+    public System.Action OnInteragirPress;
 
     [Header("Segurador")]
     public Transform itemHolder;
     public bool estaSegurando => itemHolder.childCount > 0;
     public Transform itemSegurado => itemHolder.childCount > 0 ? itemHolder.GetChild(0) : null;
+
+    [Header("Arremessavel")]
+    public float arremessoForce = 10f;
+    public float arremessoAltura = 2f;
 
     #endregion
 
@@ -47,10 +55,13 @@ public class Player : MonoBehaviour, IResetavel
 
         inputRef.MoveEvent += Move;
         inputRef.JumpEvent += Jump;
+        inputRef.InteractEvent += Interagir;
 
 
         rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ; 
+        rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ;
+
+        interator = GetComponent<Interator>();
     }
 
     void Start()
@@ -115,6 +126,9 @@ public class Player : MonoBehaviour, IResetavel
     private void Move(Vector2 dir)
     {
         movementDirection = dir;
+
+        if (movementDirection.magnitude > 0f) direction = movementDirection.normalized;
+
         movement = new Vector3(movementDirection.x, 0, 0);
     }
 
@@ -161,6 +175,11 @@ public class Player : MonoBehaviour, IResetavel
         Gizmos.DrawWireSphere(_groundCheckPoint.position, _groundCheckSize);
     }
     
+    public void Interagir() {
+        if (!interator.Interagir() && estaSegurando) {
+            ArremessarItem();
+        }
+    }
 
     #region Segurando coisas
 
@@ -170,6 +189,11 @@ public class Player : MonoBehaviour, IResetavel
         item.SetParent(itemHolder);
         item.localPosition = Vector3.zero;
         item.localRotation = Quaternion.identity;
+
+        Arremessavel arremesso = item.GetComponent<Arremessavel>();
+        if (arremesso != null) {
+            arremesso.OnHold();
+        }
     }
 
     #endregion
@@ -179,4 +203,23 @@ public class Player : MonoBehaviour, IResetavel
             Destroy(child.gameObject);
         }
     }
+
+    #region Arremessavel
+
+    public void ArremessarItem() {
+        Transform item = itemSegurado;
+        if (item == null) return;
+
+        item.SetParent(null);
+
+        Arremessavel arremesso = item.GetComponent<Arremessavel>();
+        if (arremesso != null) {
+            Vector3 direcao = transform.right * direction.x;
+            direcao.y = arremessoAltura;
+            arremesso.OnRelease();
+            arremesso.rb.AddForce(direcao * arremessoForce, ForceMode.Impulse);
+        }
+    }
+
+    #endregion
 }

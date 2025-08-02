@@ -5,30 +5,24 @@ public class Interator : MonoBehaviour {
     public LayerMask layerInteragivel; // Layer dos objetos interagíveis
     Collider[] collidersInteragiveis;
     Interagivel ultimoInteragivel;
-    public InputRef inputRef;
+
 
 
     void Start() {
         collidersInteragiveis = new Collider[8]; // Tamanho do array pode ser ajustado conforme necessário
         ultimoInteragivel = null;
-
-        inputRef = Player.Instance.inputRef;
-        inputRef.InteractEvent += Interagir;
-    }
-
-    void OnDestroy() {
-        if (inputRef != null)
-            inputRef.InteractEvent -= Interagir;
     }
 
     void FixedUpdate() {
         ChecarInteragiveis();
     }
 
-    public void Interagir() {
+    public bool Interagir() {
         if (ultimoInteragivel != null) {
             ultimoInteragivel.Interagir();
+            return true;
         }
+        return false;
     }
 
     public bool ChecarInteragiveis() {
@@ -43,6 +37,7 @@ public class Interator : MonoBehaviour {
             if (collider == null) continue;
 
             Interagivel interagivelAtual = collider.GetComponent<Interagivel>();
+            if (interagivelAtual == null || !interagivelAtual.PodeInteragir()) continue;
 
             float distancia = Vector3.Distance(transform.position, collider.transform.position);
             if (distancia < menorDistancia) {
