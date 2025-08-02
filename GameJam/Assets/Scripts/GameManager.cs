@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager: MonoBehaviour {
     public static GameManager Instance { get; private set; }
+    public InputRef inputRef;
 
     public GameObject player;
 
@@ -17,11 +18,17 @@ public class GameManager: MonoBehaviour {
             Destroy(gameObject);
             return;
         }
+
+        inputRef.PauseEvent += TogglePause;
+    }
+
+    void OnDestroy() {
+        inputRef.PauseEvent -= TogglePause;
     }
 
     #region Pause
 
-    public System.Action<bool> OnPauseChange;
+    public Action<bool> OnPauseChange;
 
     public void Pausar() {
         Time.timeScale = 0f;
@@ -85,5 +92,10 @@ public class GameManager: MonoBehaviour {
     }
 
     #endregion
+
+    public void Morte() {
+        Debug.Log("Player morreu, reiniciando sala atual");
+        ResetarSala();
+    }
 
 }
