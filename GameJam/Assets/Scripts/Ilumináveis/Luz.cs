@@ -16,10 +16,9 @@ public class Luz : MonoBehaviour{
 
     public void ChecarIluminaveis(){
         int iluminaveisQuant = Physics.OverlapSphereNonAlloc(transform.position, raioIluminacao, collidersIluminaveis, ilumiavelLayer);
-
         for(int i = 0; i < iluminaveisQuant; i++){
             iluminavel = collidersIluminaveis[i].GetComponent<Iluminavel>();
-            iluminavel.Reagir(GameManager.Instance.GetColor());
+            iluminavel.Reagir(GameManager.Instance.GetCor());
         }
     }
 

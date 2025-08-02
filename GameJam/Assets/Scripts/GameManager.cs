@@ -117,6 +117,10 @@ public class GameManager: MonoBehaviour {
         }
     }
 
+    public Cores GetCor() {
+        return cores;
+    }
+
     #endregion
 
 }

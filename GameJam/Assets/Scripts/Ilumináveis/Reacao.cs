@@ -1,3 +1,3 @@
 public interface Reacao{
-    void Reagir();
+    void Reagir(Cores cor);
 }

@@ -16,6 +16,12 @@ public class LuzBehaviour : MonoBehaviour{
     }
 
     public void MudaCor(){
+        if(GameManager.Instance.cores == Cores.GREEN){
+            GameManager.Instance.cores = 0;
+        }else{
+            GameManager.Instance.cores++;
+        }
+
         Color color = GameManager.Instance.GetColor();
         outterLight.color = color;
 
@@ -23,11 +29,5 @@ public class LuzBehaviour : MonoBehaviour{
         //innerCircle.material.color = color;
         color.a = outterAlpha;
         outterCircle.material.color = color;
-
-        if(GameManager.Instance.cores == Cores.GREEN){
-            GameManager.Instance.cores = 0;
-        }else{
-            GameManager.Instance.cores++;
-        }
     }
 }

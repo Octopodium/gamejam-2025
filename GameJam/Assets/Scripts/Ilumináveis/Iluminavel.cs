@@ -1,10 +1,14 @@
 using UnityEngine;
 
-public class Iluminavel : MonoBehaviour
-{
+public class Iluminavel : MonoBehaviour {
     Reacao reacao;
-    public void Reagir(Color cor){
-        if(reacao != null) reacao.Reagir();
+
+    void Awake() {
+        reacao = GetComponent<Reacao>();
+    }
+
+    public void Reagir(Cores cor){
+        if(reacao != null) reacao.Reagir(cor);
     }
 
 }
