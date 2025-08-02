@@ -124,18 +124,23 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if ((isGrounded || LastOnGroundTime > 0f) && !isJumping)
+        // if ((isGrounded || LastOnGroundTime > 0f) && !isJumping)
+        // {
+        //     float force = data.jumpForce;
+        //     rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, 0);
+        //     rb.AddForce(Vector3.up * force, ForceMode.Impulse);
+        //     isJumping = true;
+        //     LastOnGroundTime = 0f;
+        //     animator.SetBool("isJumpingAnim", isJumping);
+        // }
+        // else
+        // {
+        //     animator.SetBool("isJumpingAnim", !isJumping);
+        // }
+
+        if (isGrounded && !isJumping)
         {
-            float force = data.jumpForce;
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, 0);
-            rb.AddForce(Vector3.up * force, ForceMode.Impulse);
-            isJumping = true;
-            LastOnGroundTime = 0f;
-            animator.SetBool("isJumpingAnim", isJumping);
-        }
-        else
-        {
-            animator.SetBool("isJumpingAnim", !isJumping);
+            rb.AddForce(Vector3.up * data.jumpForce, ForceMode.Impulse);
         }
     }
 
