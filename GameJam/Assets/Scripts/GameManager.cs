@@ -11,6 +11,9 @@ public class GameManager: MonoBehaviour {
     public GameObject player;
     public GameObject panelPause;
 
+    public GameObject luzPrefab;
+    
+
     public Color red, blue, green;
     public Cores cores;
 

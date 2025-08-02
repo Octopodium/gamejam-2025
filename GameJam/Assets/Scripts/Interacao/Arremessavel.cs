@@ -18,10 +18,12 @@ public class Arremessavel : MonoBehaviour, Interacao {
     }   
 
     public void OnHold() {
+        if (rb == null) rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
     }
 
     public void OnRelease() {
+        if (rb == null) rb = GetComponent<Rigidbody>();
         rb.isKinematic = false;
     }
 }

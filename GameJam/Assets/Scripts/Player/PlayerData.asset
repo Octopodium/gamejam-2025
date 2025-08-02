@@ -15,6 +15,6 @@ MonoBehaviour:
   gravityStrength: -9.81
   gravityScale: 1
   fallGravityMult: 3
-  jumpHeigth: 5
+  jumpHeigth: 10
   jumpTime: 1
-  jumpForce: 5
+  jumpForce: 7

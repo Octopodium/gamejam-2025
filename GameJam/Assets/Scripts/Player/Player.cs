@@ -216,6 +216,8 @@ public class Player : MonoBehaviour, IResetavel
         foreach (Transform child in itemHolder) {
             Destroy(child.gameObject);
         }
+
+        rb.linearVelocity = Vector3.zero;
     }
 
     #region Arremessavel

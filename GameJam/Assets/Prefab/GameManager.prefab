@@ -323,6 +323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputRef: {fileID: 11400000, guid: 8d5caf8a8eeb73640a1e53cd20e8bfdd, type: 2}
   player: {fileID: 24840835868117565}
+  panelPause: {fileID: 0}
+  luzPrefab: {fileID: 1424645113504157065, guid: 9c8745658cd1dd642b22863ca779782c, type: 3}
   red: {r: 1, g: 0.37254903, b: 0.38431373, a: 1}
   blue: {r: 0.27450982, g: 0.78431374, b: 0.9843137, a: 1}
   green: {r: 0, g: 0.83137256, b: 0.11372549, a: 1}

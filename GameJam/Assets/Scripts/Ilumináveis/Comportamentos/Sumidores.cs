@@ -10,7 +10,6 @@ public class Sumidores : MonoBehaviour, Reacao {
     }
 
     public void Reagir(Cores cor) {
-        Debug.Log($"Sumidor reagindo a cor: {cor}");
         if (cor != corAparece) sumidor.gameObject.SetActive(true);
         else sumidor.gameObject.SetActive(false);
     }
