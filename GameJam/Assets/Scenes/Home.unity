@@ -1718,7 +1718,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "SUPER \n\tGAME \n\t\tNAME"
+  m_text: LUNE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e6dff7cca04fe44dbd4fcb0e5d8e930, type: 2}
   m_sharedMaterial: {fileID: -4811318867596143229, guid: 6e6dff7cca04fe44dbd4fcb0e5d8e930, type: 2}
