@@ -1,11 +1,28 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Altar : MonoBehaviour, Interacao {
     public Transform holder;
     public bool estaSegurando => holder.childCount > 0;
 
-    public GameObject segurandoAzul, segurandoVermelho, segurandoVerde;
-    public GameObject segurandoNada;
+
+    public UnityEvent OnAzul;
+    public UnityEvent OnVermelho;
+    public UnityEvent OnVerde;
+    public UnityEvent OnNada;
+
+    void Start() {
+        if (holder.childCount == 0) {
+            AtualizarBaseadoEmCor(Cores.VAZIO);
+        } else {
+            Luz luz = holder.GetChild(0).GetComponent<Luz>();
+            if (luz != null) {
+                AtualizarBaseadoEmCor(luz.GetCor());
+            } else {
+                AtualizarBaseadoEmCor(Cores.VAZIO);
+            }
+        }
+    }
 
     public void Interagir() {
         if (estaSegurando && !Player.Instance.estaSegurando) {
@@ -36,19 +53,14 @@ public class Altar : MonoBehaviour, Interacao {
     }
 
     public void AtualizarBaseadoEmCor(Cores cor) {
-        if (segurandoAzul != null) segurandoAzul.SetActive(true);
-        if (segurandoVermelho != null) segurandoVermelho.SetActive(false);
-        if (segurandoVerde != null) segurandoVerde.SetActive(false);
-        if (segurandoNada != null) segurandoNada.SetActive(false);
-
-        if (cor == Cores.BLUE && segurandoAzul != null) {
-            segurandoAzul.SetActive(true);
-        } else if (cor == Cores.RED && segurandoVermelho != null) {
-            segurandoVermelho.SetActive(true);
-        } else if (cor == Cores.GREEN && segurandoVerde != null) {
-            segurandoVerde.SetActive(true);
-        } else if (cor == Cores.VAZIO && segurandoNada != null) {
-            segurandoNada.SetActive(true);
+        if (cor == Cores.BLUE) {
+            OnAzul?.Invoke();
+        } else if (cor == Cores.RED) {
+            OnVermelho?.Invoke();
+        } else if (cor == Cores.GREEN) {
+            OnVerde?.Invoke();
+        } else if (cor == Cores.VAZIO) {
+            OnNada?.Invoke();
         }
     }
 

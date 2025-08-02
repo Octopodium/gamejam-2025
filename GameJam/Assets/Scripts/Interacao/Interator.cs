@@ -36,7 +36,9 @@ public class Interator : MonoBehaviour {
             Collider collider = collidersInteragiveis[i];
             if (collider == null) continue;
 
+
             Interagivel interagivelAtual = collider.GetComponent<Interagivel>();
+
             if (interagivelAtual == null || !interagivelAtual.PodeInteragir()) continue;
 
             float distancia = Vector3.Distance(transform.position, collider.transform.position);

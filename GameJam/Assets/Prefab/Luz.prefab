@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8737843769578721472}
   - component: {fileID: 5970555881993200482}
   - component: {fileID: 8930512097413730424}
+  - component: {fileID: 1156708233956655397}
   m_Layer: 10
   m_Name: Luz
   m_TagString: LampadaPrincipal
@@ -139,9 +140,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c777b2f34fa63249a39f7cad9fec23d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  luzPrincipal: 1
+  corNaoPrincipal: 3
   outterLight: {fileID: 8489841676856326676}
   outterCircle: {fileID: 3946556804934956858}
   inputRef: {fileID: 11400000, guid: 8d5caf8a8eeb73640a1e53cd20e8bfdd, type: 2}
+--- !u!114 &1156708233956655397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424645113504157065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eabdc3f671f26524aaac49b007189534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8619525357909096145
 GameObject:
   m_ObjectHideFlags: 0

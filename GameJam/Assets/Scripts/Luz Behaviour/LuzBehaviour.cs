@@ -2,6 +2,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class LuzBehaviour : MonoBehaviour{
+    public bool luzPrincipal = true;
+    public Cores corNaoPrincipal = Cores.VAZIO;
+
     public Light outterLight;
     public MeshRenderer outterCircle;
 
@@ -11,13 +14,19 @@ public class LuzBehaviour : MonoBehaviour{
     public InputRef inputRef;
 
     public void Start(){
-        inputRef = GameManager.Instance.inputRef;
-        inputRef.SwitchEvent += MudaCor;
-        CorInicial();
+        if (luzPrincipal) {
+            inputRef = GameManager.Instance.inputRef;
+            inputRef.SwitchEvent += MudaCor;
+            CorInicial();
+        } else {
+            SetCor(corNaoPrincipal);
+        }
     }
 
     public void OnDestroy(){
-        inputRef.SwitchEvent -= MudaCor;
+        if (luzPrincipal) {
+            inputRef.SwitchEvent -= MudaCor;
+        }
     }
 
     public void MudaCor(){
@@ -36,6 +45,13 @@ public class LuzBehaviour : MonoBehaviour{
 
         //color.a = innerAlpha;
         //innerCircle.material.color = color;
+        color.a = outterAlpha;
+        outterCircle.material.color = color;
+    }
+
+    public void SetCor(Cores cor) {
+        Color color = GameManager.Instance.GetColor(cor);
+        outterLight.color = color;
         color.a = outterAlpha;
         outterCircle.material.color = color;
     }

@@ -80,6 +80,15 @@ public class GameManager: MonoBehaviour {
         sala.ResetarSala();
     }
 
+    public void TPPlayerTo(Transform target) {
+        if (target != null) {
+            player.transform.position = target.position;
+            player.transform.rotation = target.rotation;
+        } else {
+            Debug.LogWarning("Target transform is null, cannot teleport player.");
+        }
+    }
+
     public void PreloadSala(string cenaName) {
         Debug.Log($"Preloading scene: {cenaName}");
         cenaProx = SceneManager.LoadSceneAsync(cenaName);
@@ -104,6 +113,10 @@ public class GameManager: MonoBehaviour {
         }
     }
 
+    public Sala GetSalaAtual() {
+        return salaAtual;
+    }
+
     #endregion
 
     public void Morte() {
@@ -112,6 +125,15 @@ public class GameManager: MonoBehaviour {
     }
 
     #region Color
+
+    public Color GetColor(Cores cores){
+        if(cores == Cores.RED) return red;
+        if(cores == Cores.BLUE) return blue;
+        if(cores == Cores.GREEN) return green;
+        else{
+            return red;
+        }
+    }
 
     public Color GetColor(){
         if(cores == Cores.RED) return red;

@@ -9,7 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Home.unity
     guid: 47400390deccaec48a1edeee64a03fab
   - enabled: 1
-<<<<<<< Updated upstream
     path: Assets/Scenes/Game.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
@@ -21,10 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelDoEscuro.unity
     guid: e27668a29f68c954497a7a490e2e01d0
-=======
-    path: Assets/Scenes/Level-1-Blocagem.unity
-    guid: 6270708af2bd36b48b995c779bed9c54
->>>>>>> Stashed changes
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 4c8bfd76a6e6fad4eabe38fe6f55e7b7, type: 3}
   m_UseUCBPForAssetBundles: 0
