@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Level_Blocagem.unity
+    guid: caa70ab6f4e25d644b8a5a99f53d2039
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 4c8bfd76a6e6fad4eabe38fe6f55e7b7, type: 3}
   m_UseUCBPForAssetBundles: 0
