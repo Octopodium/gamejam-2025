@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     [Header("Referências dos Paines do Menu")]
+    public GameObject panelControles;
     public GameObject panelCredits;
     public GameObject panelSlider;
     public string sceneName;
@@ -19,6 +20,11 @@ public class MenuController : MonoBehaviour
     public void PlayGameButton()
     {
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void PanelControles()
+    {
+        panelCredits.SetActive(!panelCredits.activeInHierarchy);
     }
 
     public void PanelCredits()
