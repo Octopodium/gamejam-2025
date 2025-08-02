@@ -9,6 +9,7 @@ public class GameManager: MonoBehaviour {
     public InputRef inputRef;
 
     public GameObject player;
+    public GameObject panelPause;
 
     public Color red, blue, green;
     public Cores cores;
@@ -33,14 +34,18 @@ public class GameManager: MonoBehaviour {
 
     public Action<bool> OnPauseChange;
 
-    public void Pausar() {
+    public void Pausar()
+    {
         Time.timeScale = 0f;
         OnPauseChange?.Invoke(true);
+        panelPause.SetActive(true);
     }
 
-    public void Despausar() {
+    public void Despausar()
+    {
         Time.timeScale = 1f;
         OnPauseChange?.Invoke(false);
+        panelPause.SetActive(false);
     }
 
     public void SetPause(bool pause) {
