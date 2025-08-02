@@ -98,4 +98,8 @@ public class Sala : MonoBehaviour {
         GameManager.Instance.TPPlayerTo(transform);
     }
 
+
+    public void MatarJogador() {
+        GameManager.Instance.Morte();
+    }
 }

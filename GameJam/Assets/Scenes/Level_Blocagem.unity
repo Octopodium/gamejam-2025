@@ -496,7 +496,6 @@ GameObject:
   - component: {fileID: 103600431}
   - component: {fileID: 103600430}
   - component: {fileID: 103600436}
-  - component: {fileID: 103600437}
   m_Layer: 8
   m_Name: Saw
   m_TagString: Untagged
@@ -661,40 +660,9 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &103600437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103600428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8508990ce9033e142bc312f2705090c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagFilter: Player
-  OnTriggerEnterEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
+      - m_Target: {fileID: 1064529100}
+        m_TargetAssemblyTypeName: Sala, Assembly-CSharp
+        m_MethodName: MatarJogador
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1268,17 +1236,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bc3fcc07a38f1646ba2128b14bb15df, type: 3}
---- !u!114 &376592882 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5802473899036021433, guid: 972bc7a820b867b409a71511a311b39c, type: 3}
-  m_PrefabInstance: {fileID: 1311767675}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deb35649194145d46a836f2b4a89ea36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &392684189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1808,6 +1765,7 @@ GameObject:
   - component: {fileID: 602646272}
   - component: {fileID: 602646271}
   - component: {fileID: 602646270}
+  - component: {fileID: 602646273}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -1904,6 +1862,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &602646273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602646269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41246b6e799385b409de300c8de52667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachineCamera: {fileID: 602646271}
 --- !u!4 &634588688 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7690265065560248055, guid: 972bc7a820b867b409a71511a311b39c, type: 3}
@@ -2545,9 +2516,9 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
+      - m_Target: {fileID: 1064529100}
+        m_TargetAssemblyTypeName: Sala, Assembly-CSharp
+        m_MethodName: MatarJogador
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2879,9 +2850,9 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
+      - m_Target: {fileID: 1064529100}
+        m_TargetAssemblyTypeName: Sala, Assembly-CSharp
+        m_MethodName: MatarJogador
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3014,7 +2985,6 @@ GameObject:
   - component: {fileID: 1131081973}
   - component: {fileID: 1131081978}
   - component: {fileID: 1131081979}
-  - component: {fileID: 1131081980}
   m_Layer: 8
   m_Name: Saw
   m_TagString: Untagged
@@ -3179,40 +3149,9 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnTriggerExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1131081980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1131081971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8508990ce9033e142bc312f2705090c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagFilter: Player
-  OnTriggerEnterEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
+      - m_Target: {fileID: 1064529100}
+        m_TargetAssemblyTypeName: Sala, Assembly-CSharp
+        m_MethodName: MatarJogador
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3755,9 +3694,9 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
+      - m_Target: {fileID: 1064529100}
+        m_TargetAssemblyTypeName: Sala, Assembly-CSharp
+        m_MethodName: MatarJogador
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4079,9 +4018,9 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
+      - m_Target: {fileID: 1064529100}
+        m_TargetAssemblyTypeName: Sala, Assembly-CSharp
+        m_MethodName: MatarJogador
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4776,9 +4715,9 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
+      - m_Target: {fileID: 1064529100}
+        m_TargetAssemblyTypeName: Sala, Assembly-CSharp
+        m_MethodName: MatarJogador
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5634,9 +5573,9 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
+      - m_Target: {fileID: 1064529100}
+        m_TargetAssemblyTypeName: Sala, Assembly-CSharp
+        m_MethodName: MatarJogador
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5829,9 +5768,9 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
+      - m_Target: {fileID: 1064529100}
+        m_TargetAssemblyTypeName: Sala, Assembly-CSharp
+        m_MethodName: MatarJogador
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6024,9 +5963,9 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 376592882}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Morte
+      - m_Target: {fileID: 1064529100}
+        m_TargetAssemblyTypeName: Sala, Assembly-CSharp
+        m_MethodName: MatarJogador
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

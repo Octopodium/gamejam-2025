@@ -125,8 +125,9 @@ public class GameManager: MonoBehaviour {
     }
 
     public void DestroyThyself() {
-            Destroy(gameObject);
-            Instance = null; 
+        Destroy(gameObject);
+        Instance = null; 
+        Time.timeScale = 1f;
     }
 
     #region Color

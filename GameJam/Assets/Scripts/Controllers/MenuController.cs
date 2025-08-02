@@ -13,6 +13,7 @@ public class MenuController : MonoBehaviour
     void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        Time.timeScale = 1f; 
     }
 
     public void PlayGameButton()
