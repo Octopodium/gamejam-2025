@@ -24,7 +24,7 @@ public class MenuController : MonoBehaviour
 
     public void PanelControles()
     {
-        panelCredits.SetActive(!panelCredits.activeInHierarchy);
+        panelCredits.SetActive(!panelControles.activeInHierarchy);
     }
 
     public void PanelCredits()
